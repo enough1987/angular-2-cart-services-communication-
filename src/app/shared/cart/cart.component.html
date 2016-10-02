@@ -1,0 +1,73 @@
+
+<div class="col-xs-12 col-sm-4 xs-relative" >
+
+    <div 
+ [hidden]="cart_view" 
+        class="card-small" >
+
+        <span class="card-small-wrapper relative" >
+            <span class="card-count" > {{ cart.length || 0 }} </span>
+            <button 
+  (click)="change_cart_view()" 
+                type="button" class="btn btn-default card-label">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+            </button>
+        </span>
+
+    </div>
+
+
+    <div 
+ [hidden]="!cart_view" 
+        class="card-big" >
+
+
+         <div
+ [hidden]="cart.length"  class="empty-cart" >
+             Shopping cart is empty .
+             <a 
+ (click)="change_cart_view()"
+             > Close cart</a>
+         </div>
+
+        <div 
+ [hidden]="!cart.length" >
+
+        <button 
+ (click)="change_cart_view()" 
+                type="button" class="btn btn-default card-close-big">
+             <span class="glyphicon glyphicon-remove"></span>
+         </button>
+         
+         <br />
+
+        <div 
+ *ngFor=" let product of cart "
+             class="row single-card-product-card" >
+
+            <div class="col-xs-12 col-sm-4 product-img-wrapper">
+                <img 
+ [src]="product.img" class="img-responsive product-img" />
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <h3 class="product-title" > 
+{{ product.title }} </h3>
+                <p> 
+                <span class="product-price" > Price: 
+{{ product.price }}</span>
+                <span class="product-shipping" > Shipping: 
+{{ product.shipping }}</span>
+                </p>
+            </div>
+
+         </div>
+
+          <div class="product-total" > Total: 
+{{ get_total() }} </div>
+
+        </div>
+
+   </div>
+
+
+</div>

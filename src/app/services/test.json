@@ -1,0 +1,59 @@
+
+[
+        { 
+            "id": 0, "title": "non prod0", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 100,
+            "shipping": 20,
+            "left": 0
+        },
+        { 
+            "id": 1, "title": "onee prod1", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 200,
+            "shipping": 20,
+            "left": 3
+        },
+        { 
+            "id": 2, "title": "twooo prod2", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 1000,
+            "shipping": 20,
+            "left": 5
+        },
+        { 
+            "id": 3, "title": "upupu prod3", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 500,
+            "shipping": 20,
+            "left": 3
+        },
+        { 
+            "id": 4, "title": "cvcvcv prod4", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 400,
+            "shipping": 20,
+            "left": 69
+        },
+        { 
+            "id": 5, "title": "tttzxttt prod5", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 10000,
+            "shipping": 20,
+            "left": 7
+        },
+        { 
+            "id": 6, "title": "seven prod7", 
+            "description": ["qqqdfdfdfdf", "zzrtrrtrtrtr", "aartrtrtrtrt", "vvvvvvvvvv"],
+            "img": "img/3.jpg",
+            "price": 400,
+            "shipping": 20,
+            "left": 8
+        }
+]

@@ -10,7 +10,7 @@ export class ProductsService {
   constructor( private http: Http ) {}
 
   get(url) {
-      console.log( 'start ' , url );
+      // http://plnkr.co/edit/?p=preview
       return this.http.get(url)
                     .map(this.extractData)
                     .catch(this.handleError);

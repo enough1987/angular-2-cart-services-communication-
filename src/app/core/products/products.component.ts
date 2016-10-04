@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { CartService } from '../../services/cart.service';
-import { SearchService } from '../../services/search.service';
+import { CartService } from '../../shared/services/cart.service';
+import { SearchService } from '../../shared/services/search.service';
 
 @Component({
   selector: 'app-products',
@@ -23,6 +23,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
       this.searchService.listener.subscribe( search => {
+        //console.log( 'search ', search );
         this.searched_products = this.filter_products(search);
       });    
   }
@@ -34,6 +35,7 @@ export class ProductsComponent implements OnInit {
   
   filter_products(search){
        return this.products.filter(function(el){
+            //console.log( search , el.title , el.title.search(search) );
             if( el.title && el.title.search(search) !== -1 ) {
               return true;
             }

@@ -4,19 +4,24 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 
+import { Routing } from './app-routing.module';
+
+
 // Components
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './shared/products/products.component';
-import { CartComponent } from './shared/cart/cart.component';
-import { SearchComponent } from './shared/search/search.component';
+import { CoreComponent } from './core/core.component';
+import { ProductsComponent } from './core/products/products.component';
+import { CartComponent } from './core/cart/cart.component';
+import { SearchComponent } from './core/search/search.component';
 
+//servises
+import { CartService } from './shared/services/cart.service';
+import { SearchService } from './shared/services/search.service';
+import { CrudService } from './shared/services/crud.service';
 
-import { CartService } from './services/cart.service';
-import { SearchService } from './services/search.service';
-import { CrudService } from './services/crud.service';
+//pipes
+import { IfProductLeftZeroPipe } from './shared/pipes/if-product-left-zero.pipe';
 
-
-import { IfProductLeftZeroPipe } from './pipes/if-product-left-zero.pipe';
 
 
 @NgModule({
@@ -25,12 +30,14 @@ import { IfProductLeftZeroPipe } from './pipes/if-product-left-zero.pipe';
     ProductsComponent,
     CartComponent,
     SearchComponent,
-    IfProductLeftZeroPipe
+    IfProductLeftZeroPipe,
+    CoreComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    Routing
   ],
   providers: [
     CartService,

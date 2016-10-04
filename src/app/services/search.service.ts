@@ -7,19 +7,19 @@ export class SearchService {
 
   static instance: SearchService;
 
-  private _subject = new Subject();
+  private subject = new Subject();
 
   constructor() {
     return SearchService.instance = SearchService.instance || this;
   }
 
   get listener() {
-    return this._subject.asObservable();
+    return this.subject.asObservable();
   }
 
   send(item) {
     console.log(item);
-    this._subject.next(item);
+    this.subject.next(item);
   }
 
 }

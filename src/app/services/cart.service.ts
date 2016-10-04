@@ -7,8 +7,8 @@ export class CartService {
 
   static instance: CartService;
 
-  private _subject = new Subject();
-  private _cart = [];
+  private subject = new Subject();
+  private cart = [];
 
   constructor() {
     return CartService.instance = CartService.instance || this;
@@ -19,16 +19,16 @@ export class CartService {
   }
 
   get listener() {
-    return this._subject.asObservable();
+    return this.subject.asObservable();
   }
 
   send(item) {
-    this._cart =  this.get_cart();
+    this.cart =  this.get_cart();
     if( this._is_item_invalid(item) ) { console.error('this item is not valid'); return false; }
     if( this._is_item_exist(item) ) { console.error('this item was added before'); return false; }
-    this._cart = [...this._cart, item];
-    window.localStorage.setItem( 'cart', JSON.stringify(this._cart) );
-    this._subject.next(this._cart);
+    this.cart = [...this.cart, item];
+    window.localStorage.setItem( 'cart', JSON.stringify(this.cart) );
+    this.subject.next(this.cart);
   }
 
   private _is_item_invalid(item) {
@@ -36,7 +36,7 @@ export class CartService {
   }
 
   private _is_item_exist(item){
-        return !!this._cart.filter(function(el){
+        return !!this.cart.filter(function(el){
             if(el.id === item.id) return true;
         }).length;
   }
